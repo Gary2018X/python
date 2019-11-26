@@ -3,8 +3,8 @@ import requests
 header={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36"}
 login_url='https://accounts.douban.com/j/mobile/login/basic'#登录的url
 data={'ck': '',
-'name':'15623252882',
-      'password':'Xts0916.',
+'name':'你的用户名',
+      'password':'你的密码',
 "remember": "false",
 "ticket":''}
 s=requests.session()#作用是跨请求保持参数，也就是说s这个session对象所发出的所有请求之间会保持cookies
