@@ -19,7 +19,7 @@ def md5value(password):
     md5.update(password)
     return md5.hexdigest()
 
-#获取csrftoken，后面选课用到
+#获取csrftoken，后面很多地方都用的到
 def csrf(str):
     soup = bs(str,'html.parser')
     c = {}
