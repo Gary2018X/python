@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #author: Gary
-#versions :1.8.3 教务系统更新2019.12.29
+#versions :1.8.4 教务系统更新2019.12.29
 #登录带上了时间戳，jwb,检测浏览器，url更换，请求不能过快等,验证码函数单独出来
 
 from io import BytesIO#打开图片
@@ -84,7 +84,7 @@ def LoginByPost(username,password):
         except:
             #print(rs.text)#alertp
             s = etree.HTML(rs.text)
-            alertp = s.xpath('/html/body/div[1]/div[2]/div[2]/form/table/tr[4]/td/font/text()')#获取登录失败的原因，
+            alertp = s.xpath('//*[@id="loginInputBox"]/tr[4]/td/font/text()')#获取登录失败的原因，
             time.sleep(1)
             print(alertp[0])
             time.sleep(1)#防止过快被限制
