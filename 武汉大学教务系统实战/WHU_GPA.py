@@ -167,8 +167,8 @@ def ALL_GPA(s,cookies,csrftoken):
     print('GPA:', GPA, "总学分绩:",total,'总学分（只包含已公布成绩）:', total_s)
 
 if __name__ == '__main__':
-    username = 2018301040067  # 账号
-    password = '20001001'  # 密码，得是字符
+    username = username  # 教务系统账号
+    password = 'password'  # 教务系统密码，得是字符
     s, cookie, csrftoken = LoginByPost(username, password)
     ALL_GPA(s, cookie,csrftoken)
 
