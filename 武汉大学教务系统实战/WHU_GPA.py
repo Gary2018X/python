@@ -107,7 +107,6 @@ def ALL_GPA(s,cookies,csrftoken):
     year=datetime_now.year#获取年份
     time=datetime_now.strftime('%H:%M:%S')#格式化时间
     grade_url = 'http://bkjw.whu.edu.cn/servlet/Svlt_QueryStuScore?csrftoken={}&year=0&term=&learnType=&scoreFlag=0&t={}%20{}%20{}%20{}%20{}%20GMT+0800%20(%D6%D0%B9%FA%B1%EA%D7%BC%CA%B1%BC%E4)'.format(csrftoken,weekday,month_,day,year,time)#成绩的url
-    #如果想分学期查就再变化year和term
     #Mon%20Jan%2013%202020%2020:38:05%20GMT+0800%20(%D6%D0%B9%FA%B1%EA%D7%BC%CA%B1%BC%E4) 是指中国标准时间
     #Mon Jan 13 2020 20:38:05 GMT 0800 (中国标准时间)
     #print(grade_url)
