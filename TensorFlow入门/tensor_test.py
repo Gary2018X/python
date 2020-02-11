@@ -8,14 +8,14 @@ import datetime
 class LeNet(tf.keras.Model):
     def __init__(self):
         super().__init__()
-        self.conv_layer_1=tf.keras.layers.Conv2D(filters=6,kernel_size=(5,5),padding='valid',activation=tf.nn.relu)
-        self.pool_layer_1=tf.keras.layers.MaxPooling2D(pool_size=(2,2),padding='same')
-        self.conv_layer_2=tf.keras.layers.Conv2D(filters=16,kernel_size=(5,5),padding='valid',activation=tf.nn.relu)
-        self.pool_layer_2=tf.keras.layers.MaxPooling2D(padding='same')
-        self.flatten=tf.keras.layers.Flatten()
-        self.fc_layer_1=tf.keras.layers.Dense(units=120,activation=tf.nn.relu)
-        self.fc_layer_2 = tf.keras.layers.Dense(units=84, activation=tf.nn.relu)
-        self.output_layer = tf.keras.layers.Dense(units=10, activation=tf.nn.softmax)
+        self.conv_layer_1=tf.keras.layers.Conv2D(filters=6,kernel_size=(5,5),padding='valid',activation=tf.nn.relu)#卷积层一
+        self.pool_layer_1=tf.keras.layers.MaxPooling2D(pool_size=(2,2),padding='same')#池化层一
+        self.conv_layer_2=tf.keras.layers.Conv2D(filters=16,kernel_size=(5,5),padding='valid',activation=tf.nn.relu)#卷积层二
+        self.pool_layer_2=tf.keras.layers.MaxPooling2D(padding='same')#池化层二
+        self.flatten=tf.keras.layers.Flatten()#展平
+        self.fc_layer_1=tf.keras.layers.Dense(units=120,activation=tf.nn.relu)#连接层
+        self.fc_layer_2 = tf.keras.layers.Dense(units=84, activation=tf.nn.relu)#连接层
+        self.output_layer = tf.keras.layers.Dense(units=10, activation=tf.nn.softmax)#输出层
 
     def call(self,inputs):#batch_size28*28*1
         x=self.conv_layer_1(inputs)
@@ -130,7 +130,7 @@ class recon():
 
 if __name__ == '__main__':
         con=recon()
-        con.create_model()
+        con.create_model()#模型实例化
         con.compile_model()#新建模型训练
         # con.restore_model()#加载模型训练
         con.fit_model()#训练模型
