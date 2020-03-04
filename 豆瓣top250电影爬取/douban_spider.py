@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 # author:Gary
-import requests
+import requests# 获取网页内容
 from lxml import etree# 供xpath解析网页内容
 from bs4 import BeautifulSoup#解析网页内容
 import re# 正则匹配内容
 header={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
 # 获取网页的内容
 def get_html(url):
-    res=requests.get(url,headers=header)#获取网页，并带有伪装的浏览器头，一般网页会有检测是不是程序访问
-    res.encoding=res.apparent_encoding#设置编码
+    res=requests.get(url,headers=header)#获取网页，并带有伪装的浏览器头，一般好一朵的网站会有检测是不是程序访问
+    res.encoding=res.apparent_encoding#设置编码，防止乱码
     # print(res.text)#输出网页内容
     return res.text#返回网页的内容
 
 #通过bs4解析，主要是标签选择器
 def ana_by_bs4(text):
-    soup = BeautifulSoup(text, 'html.parser')
-    lis = soup.select("ol li")
+    soup = BeautifulSoup(text, 'html.parser')#注意需要添加html.parser解析
+    lis = soup.select("ol li")#选择ol,li标签
     for li in lis:
         index = li.find('em').text#索引
         title = li.find('span', class_='title').text#正标题
