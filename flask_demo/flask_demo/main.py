@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author : Gary
-from flask import Flask,render_template, request, url_for, redirect
+from flask import Flask,render_template, request, url_for, redirect#出来网页响应等
 import pymysql#处理数据库
 
 app = Flask(__name__)#初始化项目
@@ -9,7 +9,8 @@ app = Flask(__name__)#初始化项目
 #2019/12/11更新，只需要传入sql语句，支持大小写,及时关闭数据库链接
 def database(sql):
     type = sql.split(' ')[0].lower()
-    conn = pymysql.connect(host='127.0.0.1', user='root', password='Xts0916.', db='flask_demo', charset='utf8')  # 连接数据库
+    conn = pymysql.connect(host='127.0.0.1', user='root', password='password', db='flask_demo', charset='utf8')  # 连接数据库
+    #user，password改为自己的账号密码，数据库如果自己创建的名字不是这个也可以改
     cur = conn.cursor()#用于访问和操作数据库中的数据（一个游标，像一个指针）
     if type=='select':
         cur.execute(sql)  # 执行操作
@@ -41,7 +42,7 @@ def login():
         username = request.form['username']#获取账号
         # print(username)
         if username:
-            password = request.form['password']#获取密码
+            password = request.form['password']#获取密码，request.from['变量名']获取post方式的前端发来的数据
             if password:
                 try:
                     sql='select password from user_info where username="{}"'.format(username)
