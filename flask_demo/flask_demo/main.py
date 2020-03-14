@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author : Gary
-from flask import Flask,render_template, request, url_for, redirect#出来网页响应等
+from flask import Flask,render_template, request, url_for, redirect#处理网页响应等
 import pymysql#处理数据库
 
 app = Flask(__name__)#初始化项目
