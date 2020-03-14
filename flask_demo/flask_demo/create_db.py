@@ -5,9 +5,9 @@ import pymysql
 # python mysql 创建库、表增删改查标准语句
 print('----------------------------')
 print('载入mysql模块完成')
-con = pymysql.connect(host='localhost', user='root',passwd='Xts0916.', charset='utf8')
+con = pymysql.connect(host='localhost', user='root',passwd='password', charset='utf8')#user和password改为你自己的mysql账号密码
 # con = pymysql.connect(host='localhost', user='root',
-# passwd='password', db='test_db',  charset='utf8') # 直接连入db1库
+# passwd='password', db='test_db',  charset='utf8') # 直接连入test_db库
 print('创建连接完成')
 cur = con.cursor()
 print('获取光标完成')
