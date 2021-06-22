@@ -11,5 +11,7 @@
 2020.3.4  
 5.flask登录示例项目，+mysql  
 2020.3.14   
-6.download.py python通过url批量下载工具
+6.download.py python通过url批量下载工具  
+2021.6.22  
+6.apriori_.py 关联规则apriori算法
 2021.6.22  
