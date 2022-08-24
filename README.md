@@ -18,5 +18,5 @@
 7. apriori_.py 关联规则apriori算法
 2021.6.22  
 8. 设计模式 设计模式相关示例代码
-   - [说明文档](设计模式/docs/README.md)
+   - [说明文档](DesignPattern/docs/README.md)
 2022..15  
