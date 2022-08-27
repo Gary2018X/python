@@ -20,7 +20,7 @@
   - [策略模式](Strategy.md)
   - [模板方法模式](Template.md)
   - [观察者模式](Observer.md)
-  - [迭代子模式](Iterator.md)
+  - [迭代器模式](Iterator.md)
   - [责任链模式](ChainOfResponsibility.md)
   - [命令模式](Command.md)
   - [备忘录模式](Memento.md)
